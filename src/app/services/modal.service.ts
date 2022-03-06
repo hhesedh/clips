@@ -1,19 +1,33 @@
 import { Injectable } from '@angular/core';
 
+interface IModal {
+  id: string;
+  visible: boolean;
+}
 @Injectable({
   providedIn: 'root',
 })
 export class ModalService {
-  private visible = false;
+  private modals: IModal[] = [];
 
   constructor() { }
 
-  // TODO: Substituir por get accessor method
-  isModalOpen(): boolean {
-    return this.visible;
+  register(id: string) {
+    this.modals.push({
+      id,
+      visible: false,
+    });
+    console.log(this.modals);
   }
 
-  toogleModal() {
-    this.visible = !this.visible;
+  isModalOpen(id: string): boolean {
+    return !!this.modals.find(element => element.id === id)?.visible;
+  }
+
+  toogleModal(id: string) {
+    const modal = this.modals.find(element => element.id === id);
+    if (modal) {
+      modal.visible = !modal.visible;
+    }
   }
 }
