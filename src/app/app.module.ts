@@ -12,4 +12,4 @@ import { NavComponent } from './nav/nav.component';
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }
