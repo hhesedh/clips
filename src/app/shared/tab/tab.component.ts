@@ -7,5 +7,6 @@ import { Component, Input } from '@angular/core';
 })
 export class TabComponent {
   @Input() tabTitle = '';
+  @Input() active = false;
   constructor() {}
 }
