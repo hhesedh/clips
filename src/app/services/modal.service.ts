@@ -10,10 +10,10 @@ interface IModal {
 export class ModalService {
   private modals: IModal[] = [];
 
-  constructor() { }
+  constructor() {}
 
   unregister(id: string) {
-    this.modals = this.modals.filter(element => element.id !== id);
+    this.modals = this.modals.filter((element) => element.id !== id);
   }
 
   register(id: string) {
@@ -24,11 +24,11 @@ export class ModalService {
   }
 
   isModalOpen(id: string): boolean {
-    return !!this.modals.find(element => element.id === id)?.visible;
+    return !!this.modals.find((element) => element.id === id)?.visible;
   }
 
   toogleModal(id: string) {
-    const modal = this.modals.find(element => element.id === id);
+    const modal = this.modals.find((element) => element.id === id);
     if (modal) {
       modal.visible = !modal.visible;
     }
