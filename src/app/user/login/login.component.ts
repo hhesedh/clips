@@ -15,6 +15,8 @@ export class LoginComponent {
   alertMsg = 'Please wait! We are logging you in.';
   alertColor = 'blue';
   inSubmission = false;
+
+  // TODO: EXTRAIR MÉTODO DE SIGNIN PARA O SERVICE DE AUTH;
   constructor(private auth: AngularFireAuth) {}
 
   async login() {
